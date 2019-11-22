@@ -1,0 +1,31 @@
+openapi: 3.0.0
+servers:
+  - url: http://localhost:8080
+info:
+  title: DEMO for issue
+  version: "1.0"
+tags:
+  - name: demo
+
+paths:
+  /demo:
+    get:
+      tags:  [demo]
+      operationId: get_demo
+      responses:
+        200:
+          description: Demo Response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MyModel"
+
+components:
+  schemas:
+    MyModel:
+      type: object
+      properties:
+        demoName:
+          type: string
+        id:
+          type: integer
